@@ -102,5 +102,5 @@ if __name__ == '__main__':
     plt.plot(iteration_list, test_returns)
     plt.xlabel('Iterations')
     plt.ylabel('Returns')
-    plt.title('BC on {}'.format(env_name))
+    plt.title('BC on CartPole-v0')
     plt.show()
