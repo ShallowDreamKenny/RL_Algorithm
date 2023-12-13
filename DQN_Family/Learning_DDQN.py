@@ -119,7 +119,7 @@ if __name__ == '__main__':
     replay_buffer = ReplayBuffer(buffer_size)
     state_dim = env.observation_space.shape[0]
     action_dim = env.action_space.n
-    agent = DQN(state_dim, hidden_dim, action_dim, lr, gamma, epsilon, target_update_interval, device)
+    agent = DQN(state_dim, hidden_dim, action_dim, lr, gamma, epsilon, target_update_interval, device, 'DoubleDQN')
     # return_list = RL_utils.train_off_policy_agent(env, agent, num_episodes, replay_buffer, minimal_size, batch_size)
     return_list = []
     for i in range(10):
