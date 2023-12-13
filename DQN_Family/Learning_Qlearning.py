@@ -10,7 +10,7 @@ import gym
 import numpy as np
 
 env = gym.make('FrozenLake-v1')
-render = False
+render = True
 running_reward = None
 
 Q = np.zeros([env.observation_space.n, env.action_space.n])
@@ -26,7 +26,7 @@ for i in range(num_episodes):
     rAll = 0
 
     for t in range(100):
-        if render: env.render()
+        if render and i > num_episodes - 5: env.render()
 
         a = np.argmax(Q[state, :] + np.random.randn(1, env.action_space.n) * (1. / (i+1)))
         next_state, reward, done, info = env.step(a)
